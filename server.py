@@ -1,3 +1,4 @@
+from waitress import serve
 from flask import Flask
 
 app = Flask(__name__)
@@ -15,5 +16,5 @@ def greetings(name):
     return f'Hello, {name}!'
 
 if __name__ == '__main__':
-    app.run(host='', port=5000)  # Set host to '' to allow access from any IP address
+    serve(app, host='0.0.0.0', port=5000)  # Set host to '' to allow access from any IP address
     
